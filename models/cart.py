@@ -2,12 +2,14 @@ from models.shippable import Shippable
 
 class Cart:
     def __init__(self):
-        self.items = []  # List of (product, quantity) tuples
+        self.items = []  # List of (product, quantity)
 
     def is_empty(self):
+        #check if empty
         return len(self.items) == 0
 
     def get_subtotal(self):
+        #calc subtotal
         return sum(product.price * quantity for product, quantity in self.items)
 
     def add_item(self, product, quantity):
@@ -16,7 +18,7 @@ class Cart:
             print(f" Not enough stock for {product.name}. Only {product.quantity} left.")
             return
 
-        # Check if product is expired (only if it has is_expired())
+        # Check if product is expired "only if it is expirable product"
         try:
             if product.is_expired():
                 print(f" {product.name} is expired. Cannot add to cart.")
@@ -24,15 +26,15 @@ class Cart:
         except AttributeError:
             pass  # If is_expired doesn't exist, ignore
 
-        # All checks passed — add to cart
+        # add to cart
         self.items.append((product, quantity))
         product.quantity -= quantity
         print(f" Added {quantity}x {product.name} to cart.")
 
     def get_shippable_items(self):
-        shippables = []
+        shippables_items = []
         for product, quantity in self.items:
             if isinstance(product, Shippable):
                 for _ in range(quantity):
-                    shippables.append(product)
-        return shippables
+                    shippables_items.append(product)
+        return shippables_items

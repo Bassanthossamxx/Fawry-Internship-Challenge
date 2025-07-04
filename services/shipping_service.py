@@ -1,9 +1,9 @@
 class ShippingService:
     def __init__(self, products):
-        self.products = products  # List of shippable items (with get_name() + get_weight())
+        self.products = products  # List of shippable items
 
     def generate_shipping_notice(self):
-        print(" Shipment notice :")
+        print(" --- Shipment notice : ---")
 
         summary = {}
         total_weight = 0.0
