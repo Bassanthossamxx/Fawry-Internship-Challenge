@@ -24,7 +24,7 @@ def checkout(customer, cart):
         shipping_service.generate_shipping_notice()
 
     # Step 4: Print receipt
-    print(" Checkout receipt :")
+    print("\n --- Checkout receipt : ---")
     for product, quantity in cart.items:
         line_total = product.price * quantity
         print(f"{quantity}x {product.name} {line_total}")

@@ -7,7 +7,7 @@ class Customer:
         if amount > self.balance:
             raise ValueError(f"{self.name} has invalid balance. Needed: {amount}, Available: {self.balance}")
         self.balance -= amount
-        print(f"💳 {self.name} paid {amount} EGP. Remaining balance: {self.balance} EGP.")
+        print(f" {self.name} paid {amount} EGP. Remaining balance: {self.balance} EGP.")
 
     def __str__(self):
         return f"Customer: {self.name}, Balance: {self.balance} EGP"
