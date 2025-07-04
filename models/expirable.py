@@ -9,6 +9,7 @@ class Expirable(Product):
             return True
         return False
 
+"""
 # Testing the class:
 # Create a product that expired yesterday
 expired_cheese = Expirable(
@@ -32,3 +33,4 @@ print("Is expired?", expired_cheese.is_expired())
 
 print(fresh_cheese)
 print("Is expired?", fresh_cheese.is_expired())
+"""

@@ -8,7 +8,9 @@ class Product:
         message = f'Name : {self.name} , Price : {self.price} EGP , Quantity : {self.quantity}'
         return message
 
+"""
 #test the Product class:
 scratch_cards = Product("scratch cards", 50, 4) #inital obj from the base class
 #Print the Product object
 print(scratch_cards)
+"""
