@@ -8,7 +8,6 @@ class Expirable(Product):
         if self.expire_date < datetime.datetime.now():
             return True
         return False
-
 """
 # Testing the class:
 # Create a product that expired yesterday
